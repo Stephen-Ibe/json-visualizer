@@ -9,10 +9,13 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+    "allotment": "^1.20.4",
     "next": "15.5.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-json-view": "^1.21.3"
+    "react-json-view": "^1.21.3",
+    "reaflow": "^5.4.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
