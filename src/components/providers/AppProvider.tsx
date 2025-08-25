@@ -1,5 +1,9 @@
-import { lightTheme } from "@/lib";
+"use client";
+
+import { lightTheme, mantineTheme } from "@/lib";
+import { MantineProvider } from "@mantine/core";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React, { useState } from "react";
 import { ThemeProvider } from "styled-components";
 
@@ -9,7 +13,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
       new QueryClient({
         defaultOptions: {
           queries: {
-            staleTime: 1000 * 60 * 5,
+            refetchOnWindowFocus: false,
             retry: false,
           },
         },
@@ -17,9 +21,14 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   );
 
   return (
-    <ThemeProvider theme={lightTheme}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-    </ThemeProvider>
+    <MantineProvider defaultColorScheme="light" theme={mantineTheme}>
+      <ThemeProvider theme={lightTheme}>
+        <QueryClientProvider client={queryClient}>
+          {children}
+          <ReactQueryDevtools initialIsOpen={false} />
+        </QueryClientProvider>
+      </ThemeProvider>
+    </MantineProvider>
   );
 };
 

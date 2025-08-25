@@ -1,3 +1,12 @@
+import { createTheme } from "@mantine/core";
+
+export const mantineTheme = createTheme({
+  autoContrast: true,
+  fontSmoothing: false,
+  respectReducedMotion: true,
+  cursorType: "pointer",
+});
+
 const defaultColors = {};
 
 const darkTheme = { ...defaultColors };
