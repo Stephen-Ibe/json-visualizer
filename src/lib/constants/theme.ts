@@ -9,7 +9,7 @@ export const mantineTheme = createTheme({
 
 const defaultColors = {};
 
-const darkTheme = { ...defaultColors };
+export const darkTheme = { ...defaultColors };
 
 export const lightTheme = { ...defaultColors };
 
