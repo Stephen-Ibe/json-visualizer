@@ -9,13 +9,14 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@microlink/react-json-view": "^1.22.0",
     "@monaco-editor/react": "^4.7.0",
     "allotment": "^1.20.4",
     "next": "15.5.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "react-json-view": "^1.21.3",
-    "reaflow": "^5.4.1"
+    "reaflow": "^5.4.1",
+    "styled-components": "^6.1.19"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

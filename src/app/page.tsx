@@ -1,8 +1,13 @@
 "use client";
 
-import ReactJson from "react-json-view";
+import dynamic from "next/dynamic";
 import Editor from "@monaco-editor/react";
 import { Canvas } from "reaflow";
+
+// Dynamically import ReactJson with SSR disabled
+const ReactJson = dynamic(() => import("@microlink/react-json-view"), {
+  ssr: false,
+});
 
 const nodes = [
   {
@@ -38,8 +43,6 @@ export default function Home() {
             }}
             theme="ocean"
             indentWidth={4}
-            npm
-            run
           />
         </div>
       </div>
